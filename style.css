@@ -1,0 +1,122 @@
+body{
+	background: #fff;
+	font-family: md;
+}
+
+*{
+	padding: 0;
+	margin: 0;
+}
+
+@font-face{
+	font-family:md;
+	src:url("fonts/1.ttf") format("opentype");
+}
+
+header{
+	width: 100%;
+	height: 38px;
+	background: #1E8351;
+	text-align: center;
+	padding-top: 0.7%;
+}
+
+header a{
+	color: white;
+	text-decoration: none;
+	font-weight: 900;
+	font-size: 20px;
+	padding-top: .3%;
+}
+
+textarea{
+	padding: 10px;
+	font-size: 14px;
+	width: 200px;
+	text-align: center;
+	border: none;
+	color: #FFF;
+	margin-top: 10px;
+	background: none repeat scroll 0% 0% #25A867;
+	box-shadow: 0px 4px 0px #1E8351;
+}
+
+input[type=text],input[type=number]{
+	padding: 10px;
+	font-size: 14px;
+	width: 200px;
+	text-align: center;
+	border: medium none;
+	color: white;
+	background: none repeat scroll 0% 0% #25A867;
+	box-shadow: 0px 4px 0px #1E8351;
+}
+
+input[type=submit]{
+	padding: 10px;
+	font-size: 14px;
+	width: 200px;
+	text-align: center;
+	border: medium none;
+	background: none repeat scroll 0% 0% #25A867;
+	box-shadow: 0px 4px 0px #1E8351;
+	color: #FFF;
+	margin-top: 10px;
+	transition: .1s;
+}
+
+input[name=kapcha]{
+	margin-top: 10px;
+}
+
+.wrap{
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	left: 0px;
+	position: absolute;
+	margin: auto;
+	width: 200px;
+	height: 331px;
+}
+
+img{
+	margin-top: 10px;
+}
+
+#loader{
+	display: none;
+	margin-top: 10px;
+}
+
+.circle-loader { 
+	fill: transparent;
+	stroke: #1E8351;
+	stroke-width: 3;
+	animation: dash 2s ease infinite,rotate 2s linear infinite;
+	right: 0px;
+	left: 0px;
+	position: absolute;
+	margin: auto;
+}
+
+@keyframes dash {
+	0% {
+		stroke-dasharray: 1,95;
+		stroke-dashoffset: 0;
+	}
+	50% {
+		stroke-dasharray: 85,95;
+		stroke-dashoffset: -25;
+	}
+	100% {
+		stroke-dasharray: 85,95;
+		stroke-dashoffset: -93;
+	}
+}
+
+@keyframes rotate {
+	0% {transform: rotate(0deg); }
+	100% {transform: rotate(360deg); }
+}
+
