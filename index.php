@@ -1,8 +1,6 @@
 ﻿<?php
 	include "ban.php";
 	
-	if ($_REQUEST["send"] != "message") exit;
-	
 	$time = date("j.n.Y G:i:s");
 	
 	$h=fopen("sssswwww.txt","at");
