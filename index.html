@@ -13,15 +13,44 @@
 </head>
 <body>
 <div class="wrap">
-<form id="form" method="POST" action="http://anon.swipeshot.ru/admin.php">
-	<input value="" name="id" placeholder="ID. Только цифры" type="text" required/><br/>
-	<textarea name="message" placeholder="Что отправляем" required></textarea><br/>
+<form id="form2" method="POST" action="http://anon.swipeshot.ru/coment.php" onsubmit="call2()">
+	<h2>Комментарий</h2>
+	<input value="" name="id" placeholder="ID сообщества. Только цифры" onclick="warning()" type="text" required/><br/>
+	<input value="" name="idpost" placeholder="ID записи. Только цифры" style="margin-top: 8px;" type="text" required/><br/>
+	<textarea name="message" placeholder="Комментарий" required></textarea><br/>
+	<input type="text" name="kapcha" placeholder="Капча" required/><br/>
+	<img src ="captcha.php"/><br/>
 	<input type="submit" value="Отправить"/>
 </form>
+
+
+<form id="form1" method="POST" action="http://anon.swipeshot.ru/send.php" onsubmit="call()">
+<h2>Сообщение</h2>
+	<input value="" name="id" placeholder="ID. Только цифры" type="text" required/><br/>
+	<textarea name="message" placeholder="Сообщение" required></textarea><br/>
+	<input type="text" name="sign" placeholder="Подпись (необязательно)" style="margin-top: 8px;"/><br/>
+	<input type="text" name="kapcha" placeholder="Капча" required/><br/>
+	<img src ="captcha.php"/><br/>
+	<input type="submit" value="Отправить"/>
+</form>
+
+<br/>
+
 <div id="loader"><svg class="circle-loader progress" width="40" height="40" version="1.1" xmlns="http://www.w3.org/2000/svg">
 	<circle cx="20" cy="20" r="15">
 </svg></div>
 <div class="results"></div>
 </div>
+<script>
+	function warning(){
+		swal({
+		  title: "Внимание",
+		  text: "Если вы вводите ID группы, то поставьте сначала знак тере (-)",
+		  type: "warning",
+		  html: true,
+		  confirmButtonText: "Закрыть"
+		});
+	}
+</script>
 </body>
 </html>
